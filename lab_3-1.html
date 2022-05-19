@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <a href="lab_3.html">
+        <h2>Список задач ЛР-3</h2>
+    </a>
+    <h3>Список новостей</h3>
+    <button id="load-news">Загрузить еще</button>
+    <div class="news-list">
+        
+    </div>
+    
+    <script>
+    $(document).ready(function() {
+            let kol = 5;
+            let tek = 0;
+            $.ajax(
+               {
+                   url: "getdata_3-1.php",
+                   type: "POST",
+                   data: {
+                       kol: kol, 
+                       tek: tek
+                   },
+                   success: function (result) {
+                       let x = JSON.parse(result);
+                       for (let i = 0; i  < x.length; i++) {$('.news-list').append('<div class="news"><img src="'+x[i].img+'" alt="img" width="100px"><div>'+
+                '<h3>'+x[i].zag+'</h3>'+
+                '<p>'+x[i].opisanie+'</p></div></div>');
+                       }
+                   }
+               } 
+            );
+            tek = 5;
+            $('#load-news').click(function () {
+                $.ajax(
+               {
+                   url: "getdata_3-1.php",
+                   type: "POST",
+                   data: {
+                       kol: kol, 
+                       tek: tek
+                   },
+                   success: function (result) {
+                       let x = JSON.parse(result);
+                       for (let i = 0; i  < x.length; i++) {$('.news-list').append('<div class="news"><img src="'+x[i].img+'" alt="img" width="100px"><div>'+
+                '<h3>'+x[i].zag+'</h3>'+
+                '<p>'+x[i].opisanie+'</p></div></div>');
+                       }
+                   }
+               } 
+            );
+            tek += 5;
+            });
+            
+        });
+    </script>
+</body>
+<style>
+    body {
+        background-color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 80px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .news-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .news {
+        display: flex;
+        text-align: left;
+        font-size: 14px;
+        border: 1px solid green;
+        margin: 5px;
+        width: 320px;
+      
+    }
+    .news img {
+        margin-right: 20px;
+    }
+</style>
+</html>
