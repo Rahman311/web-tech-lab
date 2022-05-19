@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery.myGame.js"></script>
+</head>
+<body>
+    <a href="index.html">
+        <h2>Список задач ЛР-2</h2>
+    </a>
+    <h3>Игра змейка</h3>
+
+    <div id="game">
+        <button class="btn" id="start-btn">Запустить</button>
+        <button class="btn" id="stop-btn">Пауза</button>
+		<div class="game-header">
+			<div class="game-score">
+                <span>Счет:</span>
+				<span class="score-count"></span>
+			</div>
+		</div>
+		<div class="canvas-wrapper">
+			<canvas id="game-canvas" width="320" height="400"></canvas>
+		</div>
+	</div>
+
+<script>
+$(function (){
+    $('#game').myGame();
+});   
+</script>
+</body>
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+padding: 80px;
+text-align: center;
+font-size: 20px;
+background-color: aliceblue;
+}
+#game {
+width: 90vw;
+height: 80vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#game-canvas {
+	display: block;
+	border-radius: 5px;	
+}
+.btn {
+	padding: 15px 20px;
+	border: 5px solid #D21855;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.game-header {
+	padding-top: 1vmin;
+	padding-bottom: 1vmin;
+
+	display: flex;
+	justify-content: space-between;
+}
+.game-score {
+	padding: 5px;
+	width: 80px;
+	height: 35px;
+	border: 5px solid #D21855;
+	border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.score-count{
+	font-size: 3vmin;
+	color: #D21855;
+	font-weight: bold;
+}
+
+.canvas-wrapper {
+	border-radius: 5px;
+	border: 10px solid #D21855;
+	background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23525053'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+    
+</style>
+</html>
