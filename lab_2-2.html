@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <a href="lab_2.html">
+        <h2>Список задач ЛР-2</h2>
+    </a>
+    <p>Изменение цвета фона</p>
+    <form>
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" class="" required placeholder="Введите имя">
+        <br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required placeholder="Введите пароль">
+        <br>
+        <label for="password-confirm">Подтверждение пароля:</label>
+        <input type="password" id="password-confirm" name="password-cofirm" required placeholder="Введите пароль">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="Введите email">
+        <br>
+        <label for="theme">Тема сообщения:</label>
+        <input type="text" id="theme" name="theme" placeholder="Введите тему сообщения">
+        <br>
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" placeholder="Введите сообщение"></textarea>
+        <br>
+        <input type="button" value="Отправить" id="otpravit">
+        <input type="reset" value="Очистить" id="reset">
+    </form>
+    <script>
+    $(document).ready(function () {
+        function checkName() {
+            var name = String($('#name').val());
+            if (name.length < 4) {
+                $('#name').css('border-color','red');
+                return "Ошибка: имя должно быть >= 4 символов";
+            }
+            return ''; 
+        }
+
+        function checkPassword() {
+            var pass = String($('#password').val());
+            if (pass.length < 4) {
+                $('#password').css('border-color','red');
+                return "Ошибка: пароль должен быть >= 4 символов";
+            }
+            return ''; 
+        }
+
+        function checkPasswordConfirm() {
+            var pass = String($('#password-confirm').val());
+            if (pass.length < 4) {
+                $('#password-confirm').css('border-color','red');
+                return "Ошибка: пароль должен быть >= 4 символов";
+            }
+            return ''; 
+        }
+
+        function checkPasswordIsEqual() {
+            var psw = String($('#password').val());
+            var pswConf = String($('#password-confirm').val());
+            if (!(psw===pswConf) && (psw.length>=4) && (pswConf.length>=4)) {
+                $('#password').css('border-color','red');
+                $('#password-confirm').css('border-color','red');
+                return "Пароли не совпадают";
+            }
+            return ''; 
+        }
+
+        function checkEmail() {
+            var email = String($('#email').val());
+            if ((email.length==0)) {
+                $('#email').css('border-color','red');
+                return `Введите корректный email `;
+            }
+            if (!(email.includes('@'))) {
+                $('#email').css('border-color','red');
+                return `Введите @ `;
+            }
+            return ''; 
+        }
+
+        function checkMessage() {
+            var msg = String($("#message").val());
+            if ((msg.length < 10)) {
+                $('#message').css('border-color','red');
+                return "Поле сообщения содержит Менее 10 символов!";
+            }
+            return ''; 
+        }
+
+        $("#otpravit").on("click", function () {
+            var a = String(`${checkName()} ${checkPassword()} ${checkPasswordConfirm()} ${checkPasswordIsEqual()} ${checkEmail()} ${checkMessage()}`);
+            console.log(a.length);
+            if (a.length > 6) {
+                alert(a); 
+            }
+        });
+    });
+    </script>
+</body>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 80px;
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+</html>
