@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery_ui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery_ui/jquery-ui.min.css">
+</head>
+<body>
+    <a href="index.html">
+        <h2>Список лабораторных работ</h2>
+    </a>
+    <h3>Перечнень туров, форма заявки на тур (16 по списку)</h3>
+    <div id="accordion">
+        <h3>Тур лето-осень</h3>
+        <div>
+          
+            <div class="property-card">
+            <a class="turcia" href="#">
+                <div class="property-image-1 image">
+                <div class="property-image-title">
+                </div>
+                </div></a>
+            <div class="property-description">
+                <h4> Турция </h4>
+                <p>Турция — популярный выбор российских и европейских туристов. Здесь доступные цены, отличный сервис и теплое море 6 месяцев в году.</p>
+            </div>
+            </div>
+
+            <div class="property-card">
+                <a class="egipet" href="#">
+                    <div class="property-image-2 image">
+                    <div class="property-image-title">
+                    </div>
+                    </div></a>
+                <div class="property-description">
+                    <h4> Египет </h4>
+                    <p>Египет — одна из самых интересных, культурно богатых и разнообразных стран на свете c загадочной историей.</p>
+                </div>
+                </div>
+
+                <div class="property-card">
+                    <a class="crim" href="#">
+                        <div class="property-image-3 image">
+                        <div class="property-image-title">
+                        </div>
+                        </div></a>
+                    <div class="property-description">
+                        <h4> Крым </h4>
+                        <p>Крым — одно из самых горячих направлений внутреннего российского туризма.</p>
+                    </div>
+                    </div>
+
+        </div>
+        <h3>Тур зима-весна</h3>
+        <div>
+            <div class="property-card">
+                <a class="turcia" href="#">
+                    <div class="property-image-1 image">
+                    <div class="property-image-title">
+                    </div>
+                    </div></a>
+                <div class="property-description">
+                    <h4> Турция </h4>
+                    <p>Турция — популярный выбор российских и европейских туристов. Здесь доступные цены, отличный сервис и теплое море 6 месяцев в году.</p>
+                </div>
+                </div>
+    
+                <div class="property-card">
+                    <a class="egipet" href="#">
+                        <div class="property-image-2 image">
+                        <div class="property-image-title">
+                        </div>
+                        </div></a>
+                    <div class="property-description">
+                        <h4> Египет </h4>
+                        <p>Египет — одна из самых интересных, культурно богатых и разнообразных стран на свете c загадочной историей.</p>
+                    </div>
+                    </div>
+    
+                    <div class="property-card">
+                        <a class="crim" href="#">
+                            <div class="property-image-3 image">
+                            <div class="property-image-title">
+                            </div>
+                            </div></a>
+                        <div class="property-description">
+                            <h4> Крым </h4>
+                            <p>Крым — одно из самых горячих направлений внутреннего российского туризма.</p>
+                        </div>
+                        </div>
+        </div>
+    </div>
+    <div id="dialog" title="Basic dialog">
+        <div id="tabs">
+            <ul>
+              <li><a href="#tabs-1">Личные данные</a></li>
+              <li><a href="#tabs-2">Данные тура</a></li>
+            </ul>
+            <div id="tabs-1">
+              <label for="name">Введите фамилию:</label>
+              <input type="text" name="surname" id="surname">
+              <br>
+              <br>
+              <label for="name">Введите имя: (autocomplete: пример Виталий, Лавлика, Диана)</label>
+              <input type="text" name="name" id="name">
+              <br>
+              <br>
+              <label for="name">Введите отчество:</label>
+              <input type="text" name="otch" id="otch">
+              <br>
+              <br>
+              <label for="name">Номер телефона:</label>
+              <input type="phone" name="tel" id="tel">
+            </div>
+            <div id="tabs-2">
+                <p>
+                    <label for="amount" title="Конечная стоимость изменяется от количества людей">Сколько человек поедет?</label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </p>
+                <div id="slider-range-max"></div>
+                <p>В каком отеле вы бы хотели жить? (наведите чтобы узнать подробнее)</p>
+                <label for="radio-1" title="увеличивает стоимость тура на 15000">5 звезд</label>
+                <input type="radio" name="radio-1" id="radio-1"  value="15000">
+                <label for="radio-2" title="увеличивает стоимость тура на 9000">4 звезды</label>
+                <input type="radio" name="radio-1" id="radio-2" value="9000">
+                <label for="radio-3" title="стоимость тура остается неизменной">3 звезды</label>
+                <input type="radio" name="radio-1" id="radio-3" value="0" checked>
+                <p>В какой день вы бы хотели заселиться? <input type="text" id="datepicker"></p>
+                <p>Выберите пакет тура (при наведении откроется описание)</p>
+                <select name="tour" id="tour" title="Узнать подробнее можно у менеджера. Стоимость не изменяется">
+                    <option>Больше экскурсий</option>
+                    <option>Больше ресторанов</option>
+                    <option selected="selected">Рестораны и эксурсии</option>
+                </select>
+                <br>
+                <br>
+                <label for="tour-price">Предварительная цена тура</label>
+                <input type="text" id="tour-price" value="35500" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                <br>
+                <input type="button" value="Отправить заявку" id="tour-otpr">
+            </div>
+          </div>
+    </div>
+    <div id="dialog-confirm" title="Подтвердить отправку заявки?">
+        <p>При подтверждении менеджер перезвонит вам в течение 15 минут. Вы готовы?</p>
+    </div>
+    <div id="dialog-message" title="Спасибо за заявку">
+        <p>
+          Скоро мы вам перезвоним
+        </p>
+    </div>
+    
+<script>
+    $( function() {
+    $( "#accordion" ).accordion(); // разделение туров по сезонам
+    $('#dialog').dialog({ // окно оформления тура
+        autoOpen: false,
+        width: 650,
+        height: 750,
+        title: 'Форма заявки на тур'
+    });
+    $( "#tabs" ).tabs(); // разделение в окне оформления на типы данных
+    $( "#slider-range-max" ).slider({ // слайдер выбора количества человек в туре
+      range: "max",
+      min: 1,
+      max: 6,
+      value: 2,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      },
+      change: function( event, ui ) {
+        $("#tour-price").val((baseTourPrice * $("#amount").val() + Number($('input[name="radio-1"]:checked').val())));
+       }
+
+    });
+    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) ); 
+    $( "#datepicker" ).datepicker(); // выбор даты тура
+    $( "input[name='radio-1']" ).checkboxradio();
+    $( "#tour" ).selectmenu();
+
+    var commonNames = [
+      "Виталий",
+      "Лавлика",
+      "Диана",
+      "Сергей",
+      "Елена",
+      "Валентина",
+      "Мария",
+      "Екатерина"
+    ];
+    $( "#name" ).autocomplete({
+      source: commonNames
+    });
+    $( document ).tooltip();
+    $('#tour-otpr').button();
+    var baseTourPrice = 35500;
+    $('input[name=radio-1]').change( function() {
+            $("#tour-price").val((baseTourPrice * $("#amount").val() + Number($('input[name="radio-1"]:checked').val())));
+        });
+
+    $( "#dialog-confirm" ).dialog({
+        autoOpen: false,
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+    "Да": function() {
+        $( "#dialog-message" ).dialog("open");
+        $( this ).dialog( "close" );
+    },
+    Cancel: function() {
+        $( this ).dialog( "close" );
+    }
+      }
+    });
+    $( "#dialog-message" ).dialog({
+        autoOpen: false,
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+    } );
+    $('#tour-otpr').on('click', function(){
+    $( "#dialog-confirm" ).dialog("open");
+    });
+    $('.turcia').on('click', function(){ // турция (открытие формы с названием)
+        $( "#dialog" ).dialog('open');
+        $( "#dialog" ).dialog('option','title', 'Оформить заявку на тур в Турцию');
+    });
+    $('.egipet').on('click', function(){ // египет (открытие формы с названием)
+        $( "#dialog" ).dialog('open');
+        $( "#dialog" ).dialog('option','title', 'Оформить заявку на тур в Египет');
+    });
+    $('.crim').on('click', function(){ // крым (открытие формы с названием)
+        $( "#dialog" ).dialog('open');
+        $( "#dialog" ).dialog('option','title', 'Оформить заявку на тур в Крым');
+    });
+</script>
+</body>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 80px;
+        text-align: center;
+        font-size: 20px;
+        width: 1300px;
+        margin: 0 auto;
+    }
+    #accordion>div {
+        min-height: fit-content;
+        display: flex;
+        gap: 100px;
+    }
+    #dialog {
+        text-align: left;
+    }
+    .property-card
+{
+  height:18em;
+  width:325px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow:hidden;
+  -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image-1
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  background-image:url('https://fb.ru/misc/i/gallery/92769/2573039.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.property-image-2 {
+    height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  background-image:url('https://ctravl.ru/wp-content/uploads/2021/07/Turizm-v-Egipte.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.property-image-3 {
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  background-image:url('https://avatars.mds.yandex.net/get-zen_doc/3940836/pub_5f42b8a24883df77da99eaa2_5f42c1657bd71b6a2284c202/scale_1200');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:12em;
+  width:14em;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+height:0em;
+padding:0px 1em;
+}
+.property-card:hover .image
+{
+height:18em;
+}
+
+</style>
+</html>
