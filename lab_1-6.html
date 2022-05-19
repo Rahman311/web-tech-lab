@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+</head>
+<body>
+    <a href="lab_1.html">
+        <h2>Список задач ЛР-1</h2>
+    </a>
+    <p>вывод степеней двойки</p>
+    
+    <table border="5">
+    <tr><th>Степень</th> <th>Результат</th></tr>
+    <script>
+        function degree(degree) {
+            document.writeln("<tr><td>2<sup>"+ degree +"</sup></td><td>"+ Math.pow(2, degree) +"</td></tr>");
+        }
+
+        for (let i=0; i<=5; i=i+1) {
+            document.writeln("<tr><td>2<sup>"+ i +"</sup></td><td>"+ Math.pow(2, i) +"</td></tr>");
+        }; 
+    </script>
+    </table>
+</body>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 80px;
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+</html>
+    

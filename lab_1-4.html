@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные по веб-технологиям</title>
+</head>
+<body>
+    <a href="lab_1.html">
+        <h2>Список задач ЛР-1</h2>
+    </a>
+    <p>Проверка максимального числа и пароля</p>
+    <script>
+        var x, y;
+        var password = "123321";
+        x=parseInt(prompt("Введите значение х",''));
+        y=parseInt(prompt("Введите значение у",'')); 
+        if (x<y) {
+            alert(" Максимальное число - y");
+        } else if (x == y) {
+            alert("Введенные числа равны");
+        } else {
+            alert("Максимальное число - x");
+        }
+        if (prompt('Введите ваш пароль:') == password) {
+            alert('Пароль верный');
+        } else {
+            alert('Пароль неверный');
+        }
+    </script>
+    
+</body>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 80px;
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+</html>
+    
